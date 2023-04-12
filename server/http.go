@@ -13,5 +13,5 @@ func NewServer() {
 
 	rt.Use(gin.Recovery(), gin.Logger())
 	router.NewRouter(rt, ctrl.GuruCtrl, ctrl.SiswaCtrl)
-	rt.Run(":8080")
+	rt.Run("0.0.0.0:8080")
 }
