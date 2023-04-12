@@ -21,14 +21,26 @@ type PostgresConfig struct {
 }
 
 func NewDBPostges() *sql.DB {
-	pt, _ := strconv.Atoi(os.Getenv("Port"))
+	// pt, _ := strconv.Atoi(os.Getenv("Port"))
+
+	// pgConf := PostgresConfig{
+	// 	Port:              uint(pt),
+	// 	Host:              os.Getenv("Host"),
+	// 	Username:          os.Getenv("Username"),
+	// 	Password:          os.Getenv("Password"),
+	// 	DBName:            os.Getenv("DBName"),
+	// 	MaxOpenConnection: 7,
+	// 	MaxIdleConnection: 5,
+	// 	MaxIdleTime:       int(30 * time.Minute),
+	// }
+	pt, _ := strconv.Atoi(os.Getenv("PGPORT"))
 
 	pgConf := PostgresConfig{
 		Port:              uint(pt),
-		Host:              os.Getenv("Host"),
-		Username:          os.Getenv("Username"),
-		Password:          os.Getenv("Password"),
-		DBName:            os.Getenv("DBName"),
+		Host:              os.Getenv("PGHOST"),
+		Username:          os.Getenv("PGUSER"),
+		Password:          os.Getenv("PGPASSWORD"),
+		DBName:            os.Getenv("PGDATABASE"),
 		MaxOpenConnection: 7,
 		MaxIdleConnection: 5,
 		MaxIdleTime:       int(30 * time.Minute),
