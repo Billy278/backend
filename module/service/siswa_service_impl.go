@@ -41,7 +41,7 @@ func (s_serv *SiswaServiceImpl) UpdateSiswa(ctx context.Context, siswaIn model.S
 	tNow := time.Now()
 	siswa.Update_at = &tNow
 
-	siswa, err = s_serv.SiswaRepo.UpdateSiswa(ctx, siswaIn)
+	siswa, err = s_serv.SiswaRepo.UpdateSiswa(ctx, siswa)
 	if err != nil {
 		log.Printf("[ERROR] error Update Siswa :%v\n", err)
 		return
