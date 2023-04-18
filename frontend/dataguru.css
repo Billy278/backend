@@ -1,0 +1,107 @@
+.guru-input {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.guru-input h1 {
+  margin-bottom: 40px;
+}
+
+.section-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  background-color: #fffafa;
+  box-shadow: 1px 1px 5px 1px #888888;
+  height: 900px;
+}
+.avatar img {
+  border: none;
+  border-radius: 100%;
+  width: 80%;
+  box-shadow: 1px 1px 5px 1px #888888;
+}
+
+form input {
+  width: 100%;
+  height: 50px;
+  border: 0.5px solid rgb(223, 220, 220);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  padding: 20px 20px;
+  font-size: 20px;
+}
+form textarea {
+  border: 0.5px solid rgb(255, 244, 244);
+  border-radius: 20px;
+  margin: 20px 0;
+  padding: 20px;
+}
+.kirim {
+  background-color: rgb(0, 123, 160);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 40px;
+}
+.data-guru {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data-guru .table {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 80px;
+}
+th a {
+  font-size: 40px;
+  color: rgb(11, 145, 207);
+}
+th a:nth-child(2) {
+  font-size: 40px;
+
+  color: #f30c0c;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+@media (max-width: 670px) {
+  .section-input {
+    width: 90%;
+  }
+  .avatar {
+    display: none;
+  }
+  .input p {
+    margin-left: 20px;
+  }
+  form input {
+    width: 80%;
+    padding: 20px;
+    margin: 20px;
+  }
+  form textarea {
+    padding: 20px;
+    margin: 20px;
+  }
+  .kirim {
+    margin: 30px;
+  }
+}

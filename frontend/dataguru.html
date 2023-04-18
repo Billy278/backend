@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dataguru.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Data Guru</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/tut-removebg-preview.png" alt="" />
+      </div>
+      <div class="list">
+        <ul>
+          <li><a href="datasiswa.html">Data Siswa</a></li>
+          <li><a href="dataguru.html">Data Guru</a></li>
+        </ul>
+      </div>
+      <div class="toggle"><i class="bx bx-menu"></i></div>
+    </header>
+
+    <div class="guru-input">
+      <h1>Form input Data Guru</h1>
+      <div class="section-input">
+        <div class="avatar">
+          <img src="img/avatar.png" alt="" />
+        </div>
+        <div class="input">
+          <form action="https://backend-production-f609.up.railway.app">
+            <p>Masukkan id</p>
+            <input type="text" placeholder="masukkan nip" />
+            <p>Masukkan nip</p>
+            <input type="text" placeholder="masukkan nip" />
+            <p>Masukkan nama</p>
+            <input type="text" placeholder="masukkan nama" />
+            <p>Masukkan alamat</p>
+            <textarea name="" id="" cols="30" rows="10"> </textarea>
+            <p>Masukkan nomor Hp</p>
+            <input type="text" placeholder="masukkan nomor hp" />
+            <p>Masukkan Golongan</p>
+            <input type="text" placeholder="masukkan golongan" />
+
+            <a href="" class="kirim">Tambah</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-guru">
+      <h1>Tabel Data Guru</h1>
+    </div>
+    <div style="overflow-x: auto">
+      <table>
+        <tr>
+          <th>Id Guru</th>
+          <th>NIP</th>
+          <th>Nama Guru</th>
+          <th>Alamat</th>
+          <th>Nomor Hp</th>
+          <th>Golongan</th>
+          <th>Aksi</th>
+        </tr>
+        <tr>
+          <th>001</th>
+          <th>992722</th>
+          <th>budi</th>
+          <th>medan</th>
+          <th>0996665656</th>
+          <th>IIA</th>
+          <th>
+            <a href="" class="edit"><i class="bx bxs-edit"></i></a>
+            <a href="" class="hapus"><i class="bx bx-trash"></i></a>
+          </th>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
