@@ -15,4 +15,10 @@ func main() {
 	}
 
 	server.NewServer()
+	// res, err := http.Get("https://backend-production-f609.up.railway.app/guru/all")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// body, _ := io.ReadAll(res.Body)
+	// fmt.Println(body)
 }

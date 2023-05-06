@@ -35,51 +35,98 @@
         </div>
         <div class="input">
           <form action="https://backend-production-f609.up.railway.app">
-            <p>Masukkan id</p>
-            <input type="text" placeholder="masukkan nip" />
             <p>Masukkan nip</p>
-            <input type="text" placeholder="masukkan nip" />
+            <input type="text" placeholder="masukkan nip" id="nip"/>
             <p>Masukkan nama</p>
-            <input type="text" placeholder="masukkan nama" />
+            <input type="text" placeholder="masukkan nama"  id="name"/>
             <p>Masukkan alamat</p>
-            <textarea name="" id="" cols="30" rows="10"> </textarea>
+            <textarea name="" id="alamat" cols="30" rows="10"> </textarea>
             <p>Masukkan nomor Hp</p>
-            <input type="text" placeholder="masukkan nomor hp" />
+            <input type="text" placeholder="masukkan nomor hp" id="no_hp"/>
             <p>Masukkan Golongan</p>
-            <input type="text" placeholder="masukkan golongan" />
+            <input type="text" placeholder="masukkan golongan" id="golongan"/>
 
-            <a href="" class="kirim">Tambah</a>
+            <a href="" class="kirim" id="kirim">Tambah</a>
           </form>
         </div>
       </div>
     </div>
+    <script>
+      const url = 'http://localhost:8080/guru';
+function DoInsert(){
+  const data = {
+    nip: parseInt(document.getElementById("nip").value),
+    name:document.getElementById("name").value,
+    alamat:document.getElementById("alamat").value,
+    no_hp:document.getElementById("no_hp").value,
+    golongan:document.getElementById("golongan").value
+    
+};
+fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+.then(response =>{ 
+  if (response.ok) {
+    return response.json()
+  }
+  throw new Error('Network response was not ok');
+  })
+.then(data => {alert(data);
+})
+.catch(error => console.error(error));
+}
 
+document.getElementById("kirim").onclick = DoInsert;
+
+
+    </script>
+    <div id="result"></div>
     <div class="data-guru">
       <h1>Tabel Data Guru</h1>
     </div>
     <div style="overflow-x: auto">
-      <table>
-        <tr>
-          <th>Id Guru</th>
-          <th>NIP</th>
-          <th>Nama Guru</th>
-          <th>Alamat</th>
-          <th>Nomor Hp</th>
-          <th>Golongan</th>
-          <th>Aksi</th>
-        </tr>
-        <tr>
-          <th>001</th>
-          <th>992722</th>
-          <th>budi</th>
-          <th>medan</th>
-          <th>0996665656</th>
-          <th>IIA</th>
-          <th>
-            <a href="" class="edit"><i class="bx bxs-edit"></i></a>
-            <a href="" class="hapus"><i class="bx bx-trash"></i></a>
-          </th>
-        </tr>
+      <table id="users">
+
+          <script>
+            // main.js...
+            
+            // 1. GET request using fetch()
+            fetch("http://localhost:8080/guru/all")
+              // Converting received data to JSON
+              .then((response) => response.json())
+              .then((json) => {
+                
+              // 2. Create a variable to store HTML table headers
+                let li = `<tr><th>ID</th><th>Nip</th><th>Name</th><th>alamat</th> <th>no hp</th><th>golongan</th><th>Aksi</th></tr>`;
+            
+                // 3. Loop through each data and add a table row
+                Alldata =json.data;
+                Alldata.forEach((data) => {
+                    console.log(data)
+                  li += `<tr>
+                    <td>${data.id}</td>
+                    <td>${data.nip} </td>
+                    <td>${data.name}</td>
+                    <td>${data.alamat}</td>
+                    <td>${data.no_hp}</td>
+                    <td>${data.golongan}</td>
+                    <th>
+                    <a href="" class="edit"><i class="bx bxs-edit"></i></a>
+                    <a href="" class="hapus"><i class="bx bx-trash"></i></a>
+                    </th>
+                  </tr>`;
+                });
+            
+                // 4. DOM Display result
+                document.getElementById("users").innerHTML = li;
+              });
+                    
+                    </script>
+
       </table>
     </div>
   </body>
