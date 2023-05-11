@@ -52,7 +52,7 @@
       </div>
     </div>
     <script>
-      const url = 'http://localhost:8080/guru';
+      const url = 'https://backend-production-0c3e.up.railway.app/guru';
 function DoInsert(){
   const data = {
     nip: parseInt(document.getElementById("nip").value),
@@ -95,7 +95,7 @@ document.getElementById("kirim").onclick = DoInsert;
             // main.js...
             
             // 1. GET request using fetch()
-            fetch("http://localhost:8080/guru/all")
+            fetch("https://backend-production-0c3e.up.railway.app/guru/all")
               // Converting received data to JSON
               .then((response) => response.json())
               .then((json) => {
